@@ -23,4 +23,11 @@ jobs:
         with:
           args: "./gradlew assembleDebug"
 
-      - run: tree ./*
+      - run: tree ./
+
+
+#          - name: Deploy 🚀
+      - uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: ./app/build/apk/debug/app-debug.apk  # The folder the action should deploy.
