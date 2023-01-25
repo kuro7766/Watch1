@@ -26,8 +26,12 @@ jobs:
       - run: tree ./
 
 
-#          - name: Deploy 🚀
-      - uses: JamesIves/github-pages-deploy-action@v4.3.3
+##          - name: Deploy 🚀
+#      - uses: JamesIves/github-pages-deploy-action@v4.3.3
+#        with:
+#          branch: master # The branch the action should deploy to.
+#          folder: ./app/build/apk/debug/app-debug.apk  # The folder the action should deploy.
+      - uses: actions/upload-artifact@v2
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: ./app/build/apk/debug/app-debug.apk  # The folder the action should deploy.
+          name: html
+          path: ./app/build/outputs/apk/debug/app-debug.apk
