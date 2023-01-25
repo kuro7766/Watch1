@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">锁屏与亮屏</string>
+    <string name="dialog_title">提醒</string>
+    <string name="dialog_message">点击「前往设置」前往激活设备管理器，如果未开启，锁屏功能无法使用!</string>
+    <string name="dialog_cancel_message">未开启，锁屏功能无法使用</string>
+    <string name="dialog_confirm_button">前往设置</string>
+    <string name="dialog_cancel_button">算了</string>
+    <string name="notification_message">点击锁屏</string>
+</resources>
