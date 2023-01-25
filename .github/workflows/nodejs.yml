@@ -17,10 +17,7 @@ jobs:
 #       - run: git rebase
 #       --prune
 
-      - uses: sparkfabrik/android-build-action@v1.0.0
+#      - name: "Build Android project"
+      - uses: vgaidarji/android-github-actions-build@v1.0.1
         with:
-          project-path: ./
-          output-path: my-app.apk
-          browserstack-upload: true
-#          browserstack-username: ${{ secrets.BROWSERSTACK_USERNAME }}
-#          browserstack-access-key: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
+          args: "./gradlew assembleDebug"
