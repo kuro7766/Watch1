@@ -76,11 +76,12 @@ class MyService:Service() {
             }
             if (z < 9 && z > 2 && -2 < x && x < 2 && 4 < y && y < 10) {
                 showTime = System.currentTimeMillis()
-                if (showTime - shakeTime in 1..800) {
-                    shakeTime = 0
-                    wakeLock!!.acquire()
-                    wakeLock!!.release()
-                }
+//                if (showTime - shakeTime in 1..800) {
+//
+//                }
+                shakeTime = 0
+                wakeLock!!.acquire()
+                wakeLock!!.release()
             }
         }
 
