@@ -17,6 +17,7 @@ jobs:
 #       - run: git rebase
 #       --prune
 
+      - run: sudo chmod -R 777 ./*
 #      - name: "Build Android project"
       - uses: vgaidarji/android-github-actions-build@v1.0.1
         with:
