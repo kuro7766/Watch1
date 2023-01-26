@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                     SpUtils.saveBoolean(this, SpUtils.KEY_IDEA_FUNC_GRAVITY_SENSOR, true)
                     //启动抬手亮屏服务
                     startService(Intent(this@MainActivity, MyService::class.java))
-                    finish()
+//                    finish()
                 },
                 "算了", null
             ).show()
