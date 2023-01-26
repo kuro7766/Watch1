@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         if (SpUtils.getBoolean(this, SpUtils.KEY_IDEA_FUNC_GRAVITY_SENSOR, false)) {
             //启动抬手亮屏服务
             startService(Intent(this@MainActivity, MyService::class.java))
+
         } else {
             DialogUtils.createDialog(
                 this@MainActivity,
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                     SpUtils.saveBoolean(this, SpUtils.KEY_IDEA_FUNC_GRAVITY_SENSOR, true)
                     //启动抬手亮屏服务
                     startService(Intent(this@MainActivity, MyService::class.java))
-//                    finish()
+                    finish()
                 },
                 "算了", null
             ).show()
@@ -85,6 +86,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, mAdminName)
         intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "activity device")
         startActivityForResult(intent, 1)
+
     }
 
     /**

@@ -22,6 +22,9 @@ class MyService:Service() {
 
     private var shakeTime: Long = 0
     private var showTime: Long = 0
+    private var lastWakeUp: Long = 0
+    private var mode: Long = 0 // 0 , 1 : 非抬手、进入抬手状态
+
     private var sensorManager: SensorManager? = null
     private var wakeLock: PowerManager.WakeLock? = null//亮屏
     private lateinit var notification:Notification
@@ -75,13 +78,20 @@ class MyService:Service() {
                 shakeTime = System.currentTimeMillis()
             }
             if (z < 9 && z > 2 && -2 < x && x < 2 && 4 < y && y < 10) {
-                showTime = System.currentTimeMillis()
+//                showTime = System.currentTimeMillis()
 //                if (showTime - shakeTime in 1..800) {
 //
 //                }
-                shakeTime = 0
-                wakeLock!!.acquire()
-                wakeLock!!.release()
+//                防止抖动
+                if(System.currentTimeMillis() - lastWakeUp > 5000){
+
+                    shakeTime = 0
+                    wakeLock!!.acquire()
+                    wakeLock!!.release()
+
+                    lastWakeUp = System.currentTimeMillis()
+
+                }
             }
         }
 
