@@ -15,7 +15,7 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.luoli.lockandlightscreendemo.MainActivity
 import com.luoli.lockandlightscreendemo.R
-import sun.rmi.runtime.Log
+//import sun.rmi.runtime.Log
 
 
 
@@ -83,7 +83,7 @@ class MyService:Service() {
                     cpuLock!!.acquire()
                 }
             } catch (t: Throwable) {
-                sun.rmi.runtime.Log.d("DozeOff", "CPU wakelock error")
+//                sun.rmi.runtime.Log.d("DozeOff", "CPU wakelock error")
             }
         }
 
