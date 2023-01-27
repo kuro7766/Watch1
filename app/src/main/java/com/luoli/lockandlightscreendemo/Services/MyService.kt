@@ -33,9 +33,9 @@ class MyService:Service() {
     private var wakeLock: PowerManager.WakeLock? = null//亮屏
 
 
-//    private lateinit var cpuLock:PowerManager.WakeLock //从doze apk里弄出来的
+//    private var cpuLock:PowerManager.WakeLock? = null //从doze apk里弄出来的
 //    private val wifiLock: WifiManager.WifiLock? = null
-    private val cpuLock: PowerManager.WakeLock? = null
+    private lateinit var cpuLock: PowerManager.WakeLock
 
     private lateinit var notification:Notification
 
@@ -72,10 +72,10 @@ class MyService:Service() {
         if(true){
             try {
                 //acquire a CPU wakelock
-                if (cpuLock != null && cpuLock.isHeld()) { //release preexisting wakelock if present
-                    cpuLock.release()
-                    cpuLock = null
-                }
+//                if (cpuLock != null && cpuLock.isHeld()) { //release preexisting wakelock if present
+//                    cpuLock.release()
+//                    cpuLock = null
+//                }
                 if (true) { //acquire CPU wakelock if requested
                     cpuLock =
                         powerManager.newWakeLock(
