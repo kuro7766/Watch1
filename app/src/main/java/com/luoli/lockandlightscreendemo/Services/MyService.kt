@@ -33,7 +33,7 @@ class MyService:Service() {
     private var wakeLock: PowerManager.WakeLock? = null//亮屏
 
 
-    private var cpuLock: PowerManager.WakeLock? = null//从doze apk里弄出来的
+    private lateinit var cpuLock: PowerManager.WakeLock? = null//从doze apk里弄出来的
 
     private lateinit var notification:Notification
 
