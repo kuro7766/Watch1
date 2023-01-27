@@ -66,23 +66,27 @@ class MyService:Service() {
             SensorManager.SENSOR_DELAY_UI
         )
 
-        try {
-            //acquire a CPU wakelock
-            if (cpuLock != null && cpuLock.isHeld()) { //release preexisting wakelock if present
-                cpuLock.release()
-                cpuLock = null
+//        添加cpu lock
+        if(true){
+            try {
+                //acquire a CPU wakelock
+                if (cpuLock != null && cpuLock.isHeld()) { //release preexisting wakelock if present
+                    cpuLock.release()
+                    cpuLock = null
+                }
+                if (true) { //acquire CPU wakelock if requested
+                    cpuLock =
+                        powerManager.newWakeLock(
+                            PowerManager.PARTIAL_WAKE_LOCK,
+                            "MYDozeOff::CPULock"
+                        )
+                    cpuLock!!.acquire()
+                }
+            } catch (t: Throwable) {
+                sun.rmi.runtime.Log.d("DozeOff", "CPU wakelock error")
             }
-            if (true) { //acquire CPU wakelock if requested
-                cpuLock =
-                    powerManager.newWakeLock(
-                        PowerManager.PARTIAL_WAKE_LOCK,
-                        "MYDozeOff::CPULock"
-                    )
-                cpuLock!!.acquire()
-            }
-        } catch (t: Throwable) {
-            sun.rmi.runtime.Log.d("DozeOff", "CPU wakelock error")
         }
+
     }
 
 
