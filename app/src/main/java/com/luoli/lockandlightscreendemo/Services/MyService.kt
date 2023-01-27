@@ -33,7 +33,9 @@ class MyService:Service() {
     private var wakeLock: PowerManager.WakeLock? = null//亮屏
 
 
-    private lateinit var cpuLock:PowerManager.WakeLock //从doze apk里弄出来的
+//    private lateinit var cpuLock:PowerManager.WakeLock //从doze apk里弄出来的
+//    private val wifiLock: WifiManager.WifiLock? = null
+    private val cpuLock: PowerManager.WakeLock? = null
 
     private lateinit var notification:Notification
 
@@ -80,7 +82,7 @@ class MyService:Service() {
                             PowerManager.PARTIAL_WAKE_LOCK,
                             "MYDozeOff::CPULock"
                         )
-                    cpuLock!!.acquire()
+                    cpuLock.acquire()
                 }
             } catch (t: Throwable) {
 //                sun.rmi.runtime.Log.d("DozeOff", "CPU wakelock error")
