@@ -15,6 +15,10 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.luoli.lockandlightscreendemo.MainActivity
 import com.luoli.lockandlightscreendemo.R
+import sun.rmi.runtime.Log
+
+
+
 
 
 
@@ -27,6 +31,10 @@ class MyService:Service() {
 
     private var sensorManager: SensorManager? = null
     private var wakeLock: PowerManager.WakeLock? = null//亮屏
+
+
+    private var cpuLock: PowerManager.WakeLock? = null//从doze apk里弄出来的
+
     private lateinit var notification:Notification
 
 
@@ -57,6 +65,24 @@ class MyService:Service() {
             accelerometer,
             SensorManager.SENSOR_DELAY_UI
         )
+
+        try {
+            //acquire a CPU wakelock
+            if (cpuLock != null && cpuLock.isHeld()) { //release preexisting wakelock if present
+                cpuLock.release()
+                cpuLock = null
+            }
+            if (true) { //acquire CPU wakelock if requested
+                cpuLock =
+                    powerManager.newWakeLock(
+                        PowerManager.PARTIAL_WAKE_LOCK,
+                        "MYDozeOff::CPULock"
+                    )
+                cpuLock!!.acquire()
+            }
+        } catch (t: Throwable) {
+            sun.rmi.runtime.Log.d("DozeOff", "CPU wakelock error")
+        }
     }
 
 
