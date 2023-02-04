@@ -65,7 +65,8 @@ class MyService:Service() {
         sensorManager!!.registerListener(
             sensorEventListener,
             accelerometer,
-            SensorManager.SENSOR_DELAY_UI
+//            SensorManager.SENSOR_DELAY_UI
+            1500
         )
 
 //        添加cpu lock
