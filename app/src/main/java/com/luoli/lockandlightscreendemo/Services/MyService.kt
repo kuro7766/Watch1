@@ -70,7 +70,7 @@ class MyService:Service() {
         )
 
 //        添加cpu lock
-        if(false){
+        if(true){
             try {
                 //acquire a CPU wakelock
 //                if (cpuLock != null && cpuLock.isHeld()) { //release preexisting wakelock if present
