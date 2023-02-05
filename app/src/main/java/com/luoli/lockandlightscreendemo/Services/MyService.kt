@@ -116,7 +116,7 @@ class MyService:Service() {
 //
 //                }
 //                防止抖动
-                if(System.currentTimeMillis() - lastWakeUp > 5000){
+                if(System.currentTimeMillis() - lastWakeUp > 5000 && mode==0){
 
                     shakeTime = 0
                     wakeLock!!.acquire()
@@ -124,7 +124,10 @@ class MyService:Service() {
 
                     lastWakeUp = System.currentTimeMillis()
 
+                    mode = 1;
                 }
+            }else{
+                mode = 0;
             }
         }
 
