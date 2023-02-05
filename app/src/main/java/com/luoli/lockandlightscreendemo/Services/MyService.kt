@@ -66,11 +66,11 @@ class MyService:Service() {
             sensorEventListener,
             accelerometer,
 //            SensorManager.SENSOR_DELAY_UI
-            1500
+            2000
         )
 
 //        添加cpu lock
-        if(true){
+        if(false){
             try {
                 //acquire a CPU wakelock
 //                if (cpuLock != null && cpuLock.isHeld()) { //release preexisting wakelock if present
