@@ -18,6 +18,7 @@ import com.luoli.lockandlightscreendemo.R
 //import sun.rmi.runtime.Log
 
 
+import android.net.wifi.WifiManager
 
 
 
