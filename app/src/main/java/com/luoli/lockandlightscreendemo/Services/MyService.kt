@@ -89,7 +89,7 @@ class MyService:Service() {
                         )
                     cpuLock.acquire()
 
-                    wifiLock = (getSystemService(Context.WIFI_SERVICE) as WifiManager).createWifiLock(WifiManager.WIFI_MODE_FULL, "MYDozeOff::WifiLock")
+                    wifiLock = (getSystemService(WIFI_SERVICE) as WifiManager).createWifiLock(WifiManager.WIFI_MODE_FULL, "MYDozeOff::WifiLock")
                     wifiLock.acquire()
                 }
             } catch (t: Throwable) {
