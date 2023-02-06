@@ -82,12 +82,12 @@ class MyService:Service() {
 //                    cpuLock = null
 //                }
                 if (true) { //acquire CPU wakelock if requested
-                    cpuLock =
-                        powerManager.newWakeLock(
-                            PowerManager.PARTIAL_WAKE_LOCK,
-                            "MYDozeOff::CPULock"
-                        )
-                    cpuLock.acquire()
+//                    cpuLock =
+//                        powerManager.newWakeLock(
+//                            PowerManager.PARTIAL_WAKE_LOCK,
+//                            "MYDozeOff::CPULock"
+//                        )
+//                    cpuLock.acquire()
 
                     wifiLock = (getSystemService(WIFI_SERVICE) as WifiManager).createWifiLock(WifiManager.WIFI_MODE_FULL, "MYDozeOff::WifiLock")
                     wifiLock.acquire()
