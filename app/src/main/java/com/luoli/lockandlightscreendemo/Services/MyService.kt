@@ -37,6 +37,8 @@ class MyService:Service() {
 //    private val wifiLock: WifiManager.WifiLock? = null
     private lateinit var cpuLock: PowerManager.WakeLock
 
+    private lateinit var wifiLock : WifiManager.WifiLock
+
     private lateinit var notification:Notification
 
 
@@ -66,8 +68,8 @@ class MyService:Service() {
             sensorEventListener,
             accelerometer,
 //            SensorManager.SENSOR_DELAY_UI
-//            1500000
-            3000000
+            1000000
+//            3000000
         )
 
 //        添加cpu lock
@@ -85,6 +87,9 @@ class MyService:Service() {
                             "MYDozeOff::CPULock"
                         )
                     cpuLock.acquire()
+
+                    wifiLock = (getSystemService(Context.WIFI_SERVICE) as WifiManager).createWifiLock(WifiManager.WIFI_MODE_FULL, "MYDozeOff::WifiLock")
+                    wifiLock.acquire()
                 }
             } catch (t: Throwable) {
 //                sun.rmi.runtime.Log.d("DozeOff", "CPU wakelock error")
