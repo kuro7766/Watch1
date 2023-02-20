@@ -7,6 +7,8 @@ import android.content.Intent;
 //import BroadcastReceiver
 import android.content.BroadcastReceiver;
 
+import com.luoli.lockandlightscreendemo.MainActivity;
+
 public class BootReceiver extends BroadcastReceiver
 {
     public BootReceiver()
