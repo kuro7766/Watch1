@@ -69,7 +69,8 @@ class MyService:Service() {
             sensorEventListener,
             accelerometer,
 //            SensorManager.SENSOR_DELAY_UI
-            1000000
+//            1000000
+            300000
 //            3000000
         )
 
