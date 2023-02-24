@@ -1,5 +1,22 @@
 # Android一键锁屏与抬手亮屏的实现
 
+基于原作者修改 -> https://gitee.com/qu-wenbin/lock-and-light-screen-demo
+
+适用于只有重力传感器的安卓手表
+
+添加了
+
+- 开机自启动
+
+- cpu wakelock，防杀
+
+- 简化了唤醒判断逻辑
+
+
+---
+
+### 以下出自原作者
+
 .
 
 ### 介绍
