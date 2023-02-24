@@ -2,7 +2,7 @@
 
 基于原作者修改 -> https://gitee.com/qu-wenbin/lock-and-light-screen-demo
 
-适用于**只有重力传感器**的安卓手表
+适用于**只有重力传感器**的安卓手表，如瑞恒8606的抬手唤醒
 
 添加了
 
@@ -11,6 +11,13 @@
 - cpu wakelock，防杀
 
 - 简化了唤醒判断逻辑：上抬约45°就会唤醒；保持抬手姿势不会持续唤醒（必须放下一次）；五秒钟之内只会唤醒一次。
+
+耗电情况： 
+
+|待机耗电量占比|海派贵族耗电情况|
+| --- | --- |
+|![IR~8U9$ET3TR$H A ~(B{SV](https://user-images.githubusercontent.com/49401947/221221181-de5c2fcf-98bc-4a57-b163-bf9ef627170c.jpg)|![{V05SL}YW$D`MGR R2 PCAL](https://user-images.githubusercontent.com/49401947/221221267-68c8e304-fe8a-4035-849d-f0edea30a02e.jpg)|
+
 
 ---
 
