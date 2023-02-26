@@ -107,12 +107,27 @@ class MyService:Service() {
     private val sensorEventListener: SensorEventListener = object : SensorEventListener {
         override fun onSensorChanged(event: SensorEvent) {
             val values = event.values
+
+            
+            
+//海派贵族的配置
+//            //X轴方向的重力加速度，向右为正
+//            val x = values[0]
+//            //Y轴方向的重力加速度，向前为正
+//            val y = values[1]
+//            //Z轴方向的重力加速度，向上为正
+//            val z = values[2]
+
+//瑞恒的配置
             //X轴方向的重力加速度，向右为正
-            val x = values[0]
+            val x = values[1]
             //Y轴方向的重力加速度，向前为正
-            val y = values[1]
+            val y = values[0]
             //Z轴方向的重力加速度，向上为正
             val z = values[2]
+
+            
+            
             val medumValue = 12
             //判断是否抬手
             if (Math.abs(x) > medumValue || Math.abs(y) > medumValue || Math.abs(z) > medumValue) {
