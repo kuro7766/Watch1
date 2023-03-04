@@ -118,14 +118,20 @@ class MyService:Service() {
 //            //Z轴方向的重力加速度，向上为正
 //            val z = values[2]
 
-//瑞恒的配置1
+// //瑞恒的配置1
+//             //X轴方向的重力加速度，向右为正
+//             val x = values[1]
+//             //Y轴方向的重力加速度，向前为正
+//             val y = values[0]
+//             //Z轴方向的重力加速度，向上为正
+//             val z = values[2]
+//瑞恒的配置2
             //X轴方向的重力加速度，向右为正
-            val x = values[1]
+            val x = values[0]
             //Y轴方向的重力加速度，向前为正
-            val y = values[0]
+            val y = values[1]
             //Z轴方向的重力加速度，向上为正
             val z = values[2]
-
             
             
             val medumValue = 12
